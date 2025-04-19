@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+[English Version](/README_EN.md) | [中文文档](/README.md)
 
-## Getting Started
+# 电商商品展示与详情页面
 
-First, run the development server:
+本项目是基于 [Next.js](https://nextjs.org) 框架开发的电商商品展示与详情页面应用，包含商品列表、商品详情、购物车等核心功能，界面简洁现代，支持响应式设计。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 主要功能
+- 商品列表页：浏览所有商品，展示商品名称、价格、折扣、评分等信息。
+- 商品详情页：查看单个商品的详细信息，包括描述、图片、价格、库存、特色等。
+- 购物车：添加、移除商品，调整数量，计算总价，支持清空购物车。
+- 全局导航栏与页脚，良好的用户体验。
+
+## 目录结构
+```
+src/
+  app/                // Next.js 路由与页面目录
+    page.tsx          // 首页（欢迎页）
+    layout.tsx        // 全局布局
+    products/         // 商品相关页面
+      [id]/page.tsx   // 商品详情页（动态路由）
+  components/         // 复用组件
+    ProductCard.tsx   // 商品卡片组件
+    CartDrawer.tsx    // 购物车抽屉组件
+    AddToCartButton.tsx // 加入购物车按钮
+    Navbar.tsx        // 导航栏
+    Footer.tsx        // 页脚
+  context/            // 全局状态管理
+    CartContext.tsx   // 购物车上下文
+  lib/                // 业务逻辑与数据
+    data/products.ts  // 商品数据与数据操作方法
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 启动方式
+1. 安装依赖：
+```bash
+npm install
+```
+2. 启动开发服务器：
+```bash
+npm run dev
+```
+3. 打开浏览器访问 [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 技术栈
+- Next.js 13+
+- React 18
+- TypeScript
+- Tailwind CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 项目亮点
+- 全部页面和组件均支持暗黑模式
+- 商品数据本地模拟，便于二次开发
+- 代码结构清晰，易于扩展
 
-## Learn More
+## 适用场景
+- 电商商城原型开发
+- Next.js/React 进阶学习
+- 组件化开发实践
 
-To learn more about Next.js, take a look at the following resources:
+---
+如需自定义或扩展功能，建议从 `src/components` 和 `src/lib/data/products.ts` 入手。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+欢迎反馈与贡献！
