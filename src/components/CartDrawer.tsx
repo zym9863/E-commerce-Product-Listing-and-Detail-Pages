@@ -1,6 +1,5 @@
 "use client";
 import { useCart } from "@/context/CartContext";
-import Image from "next/image";
 
 export default function CartDrawer({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { cart, removeFromCart, updateQuantity, clearCart } = useCart();

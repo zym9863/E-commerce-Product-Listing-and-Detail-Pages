@@ -1,5 +1,4 @@
 import { getProductById } from '@/lib/data/products';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import AddToCartButton from '@/components/AddToCartButton';
 

@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+
 import Link from 'next/link';
 import { Product } from '@/lib/data/products';
 
@@ -11,7 +11,7 @@ interface ProductCardProps {
 import { useCart } from '@/context/CartContext';
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const { id, name, price, discountPrice, rating, images } = product;
+  const { id, name, price, discountPrice, rating } = product;
   const { addToCart } = useCart();
 
   // Calculate discount percentage if there's a discount price
