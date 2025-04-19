@@ -2,12 +2,8 @@ import { getProductById } from '@/lib/data/products';
 import { notFound } from 'next/navigation';
 import AddToCartButton from '@/components/AddToCartButton';
 
-interface ProductDetailPageProps {
-  params: { id: string };
-}
-
-export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
-  const product = await getProductById(params.id);
+export default async function ProductDetailPage({ params: { id } }: { params: { id: string } }) {
+  const product = await getProductById(id);
   if (!product) return notFound();
 
   return (
